@@ -8,7 +8,7 @@
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "lint": "eslint --fix src test",
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
   "keywords": [],
   "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
