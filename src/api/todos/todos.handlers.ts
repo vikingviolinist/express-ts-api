@@ -41,12 +41,12 @@ export const createOne = async (
   next: NextFunction
 ) => {
   try {
-    const insertResult = await Todos.insertOne(req.body);
-    if (!insertResult.acknowledged) {
+    const result = await Todos.insertOne(req.body);
+    if (!result.acknowledged) {
       throw new Error('Error inserting todo');
     }
     res.status(201);
-    res.json({ _id: insertResult.insertedId, ...req.body });
+    res.json({ _id: result.insertedId, ...req.body });
   } catch (error) {
     next(error);
   }
